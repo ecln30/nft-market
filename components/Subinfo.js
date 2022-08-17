@@ -16,14 +16,22 @@ import { SIZES,FONTS,COLORS,SHASOWS,assets, SHADOWS } from '../constants'
 export const NFTTitle = ({title,subTitle,titleSize,subTitleSize}) => {
   return (
     <View>
-      <Text>{title}</Text>
+      <Text style={{fontFamily:FONTS.semiBold, fontSize:titleSize,
+      color:COLORS.primary}}>{title}</Text>
+      <Text style={{fontFamily:FONTS.regular, fontSize:subTitleSize,
+      color:COLORS.primary}}>{subTitle}</Text>
     </View>
 )}
 
-export const EthPrice = () => {
+export const EthPrice = ({price}) => {
   return (
-    <View>
-      <Text>Subinfo</Text>
+    <View style={{flexDirection:'row', alignItems:'center'}}>
+     <Image
+      source={assets.eth}
+      resizeMode="contain"
+      style={{width:20,height:20,marginRight:2}} 
+      />
+      <Text style={{fontFamily:FONTS.medium,fontSize:SIZES.font,color:COLORS.primary}}> {price} </Text>
     </View>
 )}
 
@@ -65,7 +73,7 @@ export const EndDate = () => {
     }}>
 
      <Text style={{
-        fontFaily:FONTS.regular, 
+        fontFamily:FONTS.regular, 
         fontSize:SIZES.smaill,
         color:COLORS.primary
       }}>
@@ -73,13 +81,12 @@ export const EndDate = () => {
      </Text>
          
       <Text style={{
-        fontFaily:FONTS.semiBold, 
+        fontFamily:FONTS.semiBold, 
         fontSize:SIZES.medium,
         color:COLORS.primary
         }}>
         12h 30m
       </Text>
-           
    </View>
     
 )} 
